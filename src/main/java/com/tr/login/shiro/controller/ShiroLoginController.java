@@ -45,11 +45,11 @@ public class ShiroLoginController {
         if (StringUtils.isEmpty(user.getUsername()) || StringUtils.isEmpty(user.getPassword())) {
             return "请输入用户名和密码！";
         }
-        //用户认证信息
+        // 用户认证信息
         Subject subject = SecurityUtils.getSubject();
         UsernamePasswordToken token = new UsernamePasswordToken(user.getUsername(), user.getPassword());
         try {
-            //进行验证，这里可以捕获异常，然后返回对应信息
+            // 进行验证，这里可以捕获异常，然后返回对应信息
             subject.login(token);
 //            subject.checkRole("admin");
 //            subject.checkPermission("query", "add");
