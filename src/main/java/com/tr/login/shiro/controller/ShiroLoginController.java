@@ -52,7 +52,7 @@ public class ShiroLoginController {
             //进行验证，这里可以捕获异常，然后返回对应信息
             subject.login(token);
 //            subject.checkRole("admin");
-//            subject.checkpermission("query", "add");
+//            subject.checkPermission("query", "add");
         } catch (UnknownAccountException e) {
             log.error("用户名不存在！", e.getMessage());
             return "用户名不存在！";
